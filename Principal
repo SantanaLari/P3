@@ -1,0 +1,30 @@
+package view;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import controller.SteamController;
+
+public class Principal {
+
+	public static void main(String[] args) throws IOException {
+		
+		Scanner input = new Scanner(System.in);
+		SteamController sc = new SteamController();
+		
+		System.out.println("Digite um symbol: ");
+		String symbol = input.next();
+		String arquivo = "dados.csv";
+		String diretorio = "C:\\TEMP";
+		
+		try {
+			sc.geraArquivo(symbol, arquivo, diretorio);
+			sc.busca(symbol);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+	
+	}
+
+}
